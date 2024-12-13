@@ -1,12 +1,46 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
+@media (prefers-color-scheme: light) {
+
+  :root {
+    --main-theme-image: url(../images/cover-image-light.png);
+    --title-text-color: #ffc2e6;
+    --main-theme-color: #353430;
+    --accent-decorative-color: #ff8dcb;
+    --card-text-color: #353430;
+    --hover-decorative-color: #35343066;
+  }
+
+  .header__theme-menu,
+  .section-title,
+  .title::before,
+  .title::after,
+  .decorated-zone::before,
+  .decorated-zone::after {
+    --accent-decorative-color: #353430;
+  }
+
+  .decorative-element {
+    display: none;
+  }
+}
 
 .page.theme_light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --main-theme-image: url(../images/cover-image-light.png);
+  --title-text-color: #ffc2e6;
+  --main-theme-color: #353430;
+  --accent-decorative-color: #ff8dcb;
+  --card-text-color: #353430;
+  --hover-decorative-color: #35343066;
+
+  .header__theme-menu,
+  .section-title,
+  .title::before,
+  .title::after,
+  .decorated-zone::before,
+  .decorated-zone::after {
+    --accent-decorative-color: #353430;
+  }
+
+  .decorative-element {
+    display: none;
+  }
 }

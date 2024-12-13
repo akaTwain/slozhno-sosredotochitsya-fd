@@ -1,5 +1,335 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  display: flex;
+  gap: var(--page-parts-gap);
+  flex-direction: column;
+  background-image: var(--main-theme-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.decorative-element {
+  position: absolute;
+  right: calc(8.6px + var(--global-resolution-padding));
+  top: calc(2.4px + var(--global-resolution-padding));
+  font-weight: 400;
+  font-size: 17px;
+  color: var(--accent-decorative-color);
+}
+
+.decorative-element::after {
+  content: "";
+  display: inline-block;
+  inline-size: 9px;
+  block-size: 9px;
+  background-color: var(--accent-decorative-color);
+  box-shadow: 0 0 4px 2px var(--accent-decorative-color);
+  border-radius: 100%;
+  margin: 0 0 2px 12px;
+}
+
+.header {
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.decorated-zone {
+  padding: var(--global-resolution-padding);
+}
+
+.decorated-zone::before {
+  position: absolute;
+  content: "";
+  inline-size: 25px;
+  block-size: 25px;
+  border-right: 1px solid var(--accent-decorative-color);
+  border-top: 1px solid var(--accent-decorative-color);
+  right: var(--global-resolution-padding);
+  top: var(--global-resolution-padding);
+}
+
+.decorated-zone::after {
+  position: absolute;
+  content: "";
+  inline-size: 25px;
+  block-size: 25px;
+  border-left: 1px solid var(--accent-decorative-color);
+  border-bottom: 1px solid var(--accent-decorative-color);
+  left: var(--global-resolution-padding);
+  bottom: var(--global-resolution-padding);
+}
+
+.header__theme-menu {
+  margin-bottom: 53px;
+}
+
+.header__theme-menu-list {
+  padding-block-start: 64px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: end;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0 12px 1.2px 13px;
+  color: var(--accent-decorative-color);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--hover-decorative-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid var(--accent-decorative-color);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-decorative-color);
+}
+
+.title {
+  font-size: var(--h1-font-size);
+  color: var(--title-text-color);
+  line-height: 83%;
+  font-weight: 700;
+  padding-top: 13px;
+  text-shadow: 4px 4px var(--accent-decorative-color);
+}
+
+.intro {
+  padding-top: 44px;
+}
+
+.text-accent-decor {
+  display: inline-block;
+  inline-size: 100%;
+  background-color: var(--accent-decorative-color);
+  line-height: 130%;
+  text-align: left;
+  word-wrap: break-word;
+  font-weight: 700;
+  color: var(--main-theme-color);
+}
+
+.content {
+  padding: 0 var(--global-resolution-padding);
+  line-height: 130%;
+  display: grid;
+  gap: var(--content-sections-gap);
+}
+
+.text-content-section {
+  display: grid;
+  gap: 20px;
+}
+
+.section-title {
+  color: var(--accent-decorative-color);
+  font-weight: 700;
+}
+
+.cards-list {
+  display: grid;
+  gap: 20px;
+}
+
+.card-title {
+  margin-bottom: 10px;
+}
+
+.text-link {
+  text-decoration: none;
+  text-shadow: 2px 1px var(--accent-decorative-color);
+}
+
+.text-link:hover {
+  border-bottom: 1px solid var(--card-text-color);
+}
+
+.text-link:focus-visible {
+  outline: 1px solid var(--card-text-color);
+}
+
+.text-less-accent {
+  font-weight: 400;
+}
+
+.card-text {
+  color: var(--card-text-color);
+}
+
+.pic-content-section .card-title {
+  margin-bottom: var(--pic-content-gap);
+}
+
+.pic-content-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, min-content);
+  gap: var(--pic-content-gap);
+}
+
+.pic {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  min-block-size: 668px;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .title {
+  padding: 0;
+  text-shadow: 2px 2px var(--accent-decorative-color);
+}
+
+.footer .title::after {
+  position: absolute;
+  content: "";
+  inline-size: 25px;
+  block-size: 25px;
+  border-left: 1px solid var(--accent-decorative-color);
+  border-bottom: 1px solid var(--accent-decorative-color);
+  left: var(--global-resolution-padding);
+  bottom: var(--global-resolution-padding);
+}
+
+.footer .title::before {
+  position: absolute;
+  content: "";
+  inline-size: 25px;
+  block-size: 25px;
+  border-right: 1px solid var(--accent-decorative-color);
+  border-top: 1px solid var(--accent-decorative-color);
+  right: var(--global-resolution-padding);
+  top: var(--global-resolution-padding);
+}
+
+@media (width >= 768px) {
+
+  :root {
+    --h1-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    --global-resolution-padding: 20px;
+    --content-sections-gap: 79.5px;
+    --page-parts-gap: 59.5px;
+    --pic-content-gap: 20px;
+  }
+
+  .header {
+    min-block-size: 1024px;
+  }
+
+  .header__theme-menu-list {
+    padding-block-start: 171px;
+  }
+
+  .header .title {
+    margin-left: calc(
+      (-1) * var(--global-resolution-padding)
+    ); /*невелирование паддинга заданное для всего элемента .decorated-zone */
+    padding-top: 116px;
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding-top: 48px;
+  }
+
+  .intro-text {
+    inline-size: 50%;
+  }
+
+  .columns-section {
+    grid-template-columns: auto 1fr;
+  }
+
+  .section-title {
+    max-inline-size: 236px;
+  }
+
+  .pic-content-list {
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .sunset-pic {
+    grid-column: span 2;
+    grid-row: 1;
+  }
+
+  .icecream-pic {
+    grid-column: 3;
+    grid-row: span 2;
+  }
+
+  .tape-pic {
+    grid-column: 1;
+    grid-row: 2 / 4;
+  }
+
+  .books-pic {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .street-pic {
+    grid-column: 2 / 4;
+    grid-row: 3;
+  }
+
+  .footer {
+    min-block-size: 1024px;
+  }
+}
+
+@media (width >= 1024px) {
+
+  .header {
+    min-block-size: 768px;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-items: start;
+  }
+
+  .header__theme-menu-list {
+    padding: 0;
+    flex-direction: row;
+  }
+
+  .header .title {
+    padding-top: 56px;
+  }
+
+  .intro {
+    padding-top: 58px;
+  }
+
+  .section-title {
+    max-inline-size: 315px;
+  }
+
+  .horizontal-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer {
+    min-block-size: 768px;
+  }
 }

@@ -1,4 +1,15 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+:root {
+  --title-text-color: #db00ff;
+  --main-theme-color: #000028;
+  --accent-decorative-color: #ff0070;
+  --hover-decorative-color: #ff007066;
+  --card-text-color: #f1b2ce;
+  --main-theme-image: url(../images/cover-image-dark.png);
+  --h1-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --content-font-size: 18px;
+  --content-line-height: 130%;
+  --global-resolution-padding: 10px;
+  --content-sections-gap: 49.5px;
+  --page-parts-gap: 40.5px;
+  --pic-content-gap: 10px;
+}
