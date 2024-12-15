@@ -95,7 +95,7 @@
 
 .header__theme-menu-button_active {
   border: 1px solid var(--accent-decorative-color);
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 .title {
@@ -287,7 +287,7 @@
 }
 
 @media (width >= 1024px) {
-
+  
   .header {
     min-height: 768px;
   }

@@ -1,5 +1,5 @@
 @media (prefers-color-scheme: light) {
-
+  
   :root {
     --main-theme-image: url(../images/cover-image-light.png);
     --title-text-color: #ffc2e6;
