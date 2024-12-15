@@ -35,6 +35,8 @@
   position: relative;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
+  height: 100vh;
+  min-height: 668px;
 }
 
 .decorated-zone {
@@ -93,6 +95,7 @@
 
 .header__theme-menu-button_active {
   border: 1px solid var(--accent-decorative-color);
+  pointer-events: none; 
 }
 
 .title {
@@ -136,13 +139,19 @@
   font-weight: 700;
 }
 
+.article-title {
+  margin-bottom: 20px;
+}
+
 .cards-list {
   display: grid;
   gap: 20px;
 }
 
-.card-title {
-  margin-bottom: 10px;
+.card-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .text-link {
@@ -187,7 +196,8 @@
 .footer {
   position: relative;
   display: flex;
-  min-block-size: 668px;
+  height: 100vh;
+  min-height: 668px;
   align-items: center;
   justify-content: center;
 }
@@ -195,28 +205,6 @@
 .footer .title {
   padding: 0;
   text-shadow: 2px 2px var(--accent-decorative-color);
-}
-
-.footer .title::after {
-  position: absolute;
-  content: "";
-  inline-size: 25px;
-  block-size: 25px;
-  border-left: 1px solid var(--accent-decorative-color);
-  border-bottom: 1px solid var(--accent-decorative-color);
-  left: var(--global-resolution-padding);
-  bottom: var(--global-resolution-padding);
-}
-
-.footer .title::before {
-  position: absolute;
-  content: "";
-  inline-size: 25px;
-  block-size: 25px;
-  border-right: 1px solid var(--accent-decorative-color);
-  border-top: 1px solid var(--accent-decorative-color);
-  right: var(--global-resolution-padding);
-  top: var(--global-resolution-padding);
 }
 
 @media (width >= 768px) {
@@ -230,7 +218,7 @@
   }
 
   .header {
-    min-block-size: 1024px;
+    min-height: 1024px;
   }
 
   .header__theme-menu-list {
@@ -255,7 +243,7 @@
     inline-size: 50%;
   }
 
-  .columns-section {
+  .modified-positioning-section {
     grid-template-columns: auto 1fr;
   }
 
@@ -294,14 +282,14 @@
   }
 
   .footer {
-    min-block-size: 1024px;
+    min-height: 1024px;
   }
 }
 
 @media (width >= 1024px) {
 
   .header {
-    min-block-size: 768px;
+    min-height: 768px;
   }
 
   .header__theme-menu {
@@ -331,6 +319,6 @@
   }
 
   .footer {
-    min-block-size: 768px;
+    min-height: 768px;
   }
 }
