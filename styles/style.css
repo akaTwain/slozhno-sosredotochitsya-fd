@@ -314,7 +314,7 @@
     max-inline-size: 315px;
   }
 
-  .horizontal-section {
+  .modified-positioning-list {
     grid-template-columns: repeat(3, 1fr);
   }
 
